@@ -1,25 +1,16 @@
 ---
 tipo: guida-utilizzo
-versione: 1.0
+versione: 1.1
 ---
 
 ## Prerequisiti
 
-Prima di iniziare, verifica di avere:
+Prima di iniziare, assicurati di avere:
 
-- **Claude Code** installato (`claude` da terminale)
+- **Claude Code** installato — come estensione in VS Code o Antrigravity
 - **Playwright MCP** abilitato nelle impostazioni di Claude Code
-- **La skill installata** in `~/.claude/skills/noiza-tech-pdf/`
-
-Installazione skill:
-```bash
-git clone git@github.com:NoizaDev/noiza-pdf-skill.git ~/.claude/skills/noiza-tech-pdf
-```
-
-Aggiornamento:
-```bash
-cd ~/.claude/skills/noiza-tech-pdf && git pull
-```
+- **Google Drive Desktop** installato e sincronizzato con il tuo account Noiza — i documenti condivisi si trovano in Drive, non in locale
+- **La skill installata** — chiedi a chi gestisce la skill il comando di installazione, oppure segui la guida contribuzione
 
 ---
 
@@ -27,22 +18,22 @@ cd ~/.claude/skills/noiza-tech-pdf && git pull
 
 ### Opzione A — da Markdown (consigliata per progetti condivisi)
 
-1. Crea o apri il file `.md` sorgente nella cartella del progetto (locale o su Drive)
+1. Crea o apri il file `.md` sorgente nella cartella del progetto su Google Drive
 2. Scrivi il contenuto in Markdown standard
-3. Per i componenti speciali (box, badge, riquadri), usa HTML inline — gli esempi sono in `references/components.md` nella cartella della skill
-4. Chiedi a Claude:
+3. Per i componenti speciali (box, badge, riquadri costi), usa HTML inline — gli esempi sono in `references/components.md` nella cartella della skill
+4. Apri il progetto in Claude Code e chiedi:
 
 > "Genera il PDF da `nome-file.md` in stile Noiza"
 
-Claude converte il Markdown in HTML con il template Noiza e produce il PDF nella stessa cartella.
+Claude converte il Markdown in HTML con il template Noiza e produce il PDF nella stessa cartella Drive.
 
 ### Opzione B — da zero
 
-Descrivi il documento a Claude direttamente:
+Apri il progetto in Claude Code e descrivi il documento:
 
 > "Crea un documento tecnico Noiza: proposta per [cliente] su [argomento]. Includi: [sezioni principali]"
 
-Claude genera HTML e PDF senza che tu debba scrivere nulla.
+Claude genera HTML e PDF direttamente.
 
 ---
 
@@ -50,23 +41,23 @@ Claude genera HTML e PDF senza che tu debba scrivere nulla.
 
 Tutti i componenti sono già inclusi nel CSS. Non serve aggiungere stili.
 
-| Componente | Come si scrive nel `.md` | Effetto |
+| Componente | HTML nel .md | Effetto |
 |---|---|---|
 | Nota informativa | `<div class="key-point"><p>testo</p></div>` | Box blu chiaro |
 | Avviso / rischio | `<div class="warning"><p>testo</p></div>` | Box arancione |
-| Riquadro costi | `<div class="price-box"><p>testo</p></div>` | Box grigio con bordo blu |
-| Nuova sezione | `<span class="section-label">Etichetta</span>` | Page break + label blu |
+| Riquadro costi | `<div class="price-box"><p>testo</p></div>` | Box grigio bordo blu |
+| Nuova sezione | `<span class="section-label">Label</span>` | Page break + label |
 | Badge blu | `<span class="badge">Testo</span>` | Etichetta blu |
 | Badge arancione | `<span class="badge-orange">Testo</span>` | Etichetta arancione |
 | Badge verde | `<span class="badge-green">Testo</span>` | Etichetta verde |
 
-Esempi completi: apri `~/.claude/skills/noiza-tech-pdf/references/components.md`
+Esempi completi: apri `references/components.md` nella cartella della skill e chiedi a Claude di mostrarteli.
 
 ---
 
 ## Progetti condivisi su Google Drive
 
-Se il progetto ha `shared:` impostato nel `CLAUDE.md`, Claude legge e salva i file direttamente su Drive. Non devi fare nulla di diverso: il PDF finale apparirà nella cartella Drive condivisa.
+Se il progetto ha il campo `shared:` impostato nel suo `CLAUDE.md`, Claude legge e salva i file automaticamente su Drive. Il PDF finale appare nella cartella condivisa senza passi aggiuntivi.
 
 Per impostare un progetto come condiviso, dì a Claude:
 
@@ -76,16 +67,18 @@ Claude aggiorna il `CLAUDE.md` del progetto.
 
 ---
 
-## Regola d'oro
-
-**Non modificare mai il CSS nei documenti generati.** Se un componente grafico non esiste, chiedi a chi gestisce la skill di aggiungerlo — non aggiungerlo inline nel documento. Questo garantisce che tutti i documenti restino visivamente coerenti nel tempo.
-
----
-
 ## Aggiornare un documento esistente
 
-Se il `.md` sorgente esiste già, modificalo e poi chiedi:
+Modifica il `.md` sorgente su Drive, poi chiedi a Claude:
 
 > "Rigenera il PDF da `nome-file.md`"
 
-Claude sovrascrive `.html` e `.pdf`. Il `.md` resta invariato — è sempre la sorgente di verità.
+Claude sovrascrive `.html` e `.pdf`. Il `.md` è sempre la sorgente di verità — non modificare mai direttamente l'HTML generato.
+
+---
+
+## Regola d'oro
+
+<div class="warning">
+  <p><strong>Non modificare mai il CSS nei documenti generati.</strong> Se un componente grafico non esiste, segnalalo a chi gestisce la skill. Aggiungere stili inline rompe la coerenza visiva di tutti i documenti.</p>
+</div>
