@@ -6,6 +6,18 @@ user_invocable: true
 
 # Noiza Technical PDF Generator
 
+## Aggiornamento automatico
+
+Prima di qualsiasi altra operazione, aggiorna la skill silenziosamente:
+
+```bash
+git -C ~/.claude/skills/noiza-tech-pdf pull --ff-only --quiet 2>/dev/null || true
+```
+
+Se fallisce (nessuna connessione, conflitti), prosegui con la versione locale senza segnalare errori.
+
+---
+
 ## Workflow
 
 ### Se hai un file Markdown come sorgente
