@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+
+  @page {
+    size: A4;
+    margin: 20mm 22mm 20mm 22mm;
+  }
+  body {
+    background-color: #ffffff;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    color: #1e293b;
+    line-height: 1.4;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 22pt;
+    color: #1e293b;
+    line-height: 1.2;
+    padding-top: 10pt;
+    padding-bottom: 6pt;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14pt;
+    color: #1e293b;
+    line-height: 1.0;
+    padding-top: 18pt;
+    padding-bottom: 6pt;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 12pt;
+    color: #1e293b;
+    line-height: 1.4;
+    padding-top: 16pt;
+    padding-bottom: 4pt;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    color: #666666;
+    line-height: 1.4;
+    padding-top: 14pt;
+    padding-bottom: 4pt;
+    page-break-after: avoid;
+  }
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    color: #1e293b;
+    margin: 0;
+    padding-top: 6pt;
+    padding-bottom: 6pt;
+    line-height: 1.4;
+  }
+  .logo { padding-bottom: 6pt; }
+  .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 11pt;
+    color: #2563eb;
+    line-height: 1.0;
+    padding-bottom: 0pt;
+  }
+
+  /* --- BADGE --- */
+  .badge {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10pt;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+  .badge-orange {
+    background-color: #ea580c;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10pt;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+  .badge-green {
+    background-color: #16a34a;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 10pt;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 16pt 0;
+  }
+  strong, b { font-weight: 700; }
+  em, i { font-style: italic; }
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 36pt;
+  }
+  li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    color: #1e293b;
+    padding-top: 4pt;
+    padding-bottom: 4pt;
+    line-height: 1.4;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10pt 0 14pt 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+  th {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 9pt;
+    padding: 6px 8px;
+    text-align: left;
+    border: 1px solid #1d4ed8;
+  }
+  td {
+    font-weight: 500;
+    font-size: 9pt;
+    color: #1e293b;
+    padding: 5px 8px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  tr:nth-child(even) { background-color: #f8fafc; }
+  code {
+    background-color: #f1f5f9;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 9pt;
+    color: #1e293b;
+  }
+  pre {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #2563eb;
+    border-radius: 4px;
+    padding: 14px;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #1e293b;
+  }
+
+  /* --- CALLOUT BOXES --- */
+  .key-point {
+    background-color: #eff6ff;
+    border-left: 3px solid #2563eb;
+    padding: 10px 14px;
+    margin: 10pt 0;
+  }
+  .key-point p, .key-point li { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
+
+  .warning {
+    background-color: #fff7ed;
+    border-left: 3px solid #ea580c;
+    padding: 10px 14px;
+    margin: 10pt 0;
+  }
+  .warning p, .warning li { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
+
+  /* --- PRICE / SUMMARY BOX --- */
+  .price-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #2563eb;
+    padding: 12px 14px;
+    margin: 10pt 0;
+  }
+  .price-box p { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
+
+  /* --- SECTION LABEL (page break + uppercase label) --- */
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 9pt;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 20pt;
+    padding-bottom: 2pt;
+    display: block;
+    page-break-before: always;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA4MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSIwIiB5PSIyMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiMyNTYzZWIiPk5vaXphPC90ZXh0Pjwvc3ZnPg==" alt="Noiza" style="height: 24px;"></p>
+<hr>
+<p class="subtitle">Contesto &middot; <span class="badge">Mese Anno</span></p>
+<h1>Titolo documento</h1>
+<hr>
+<p><strong>Preparato da:</strong> Noiza (Web Development Area)<br>
+<strong>Per:</strong> Cliente<br>
+<strong>Scopo:</strong> Descrizione breve</p>
+<hr>
+
+<!-- CONTENUTO -->
+
+<h2>1. Sezione</h2>
+
+<p>Testo...</p>
+
+<!-- FOOTER -->
+<hr>
+<p><em>Preparato da Noiza — Web Development Area</em><br>
+<em>Mese Anno</em></p>
+
+</body>
+</html>
