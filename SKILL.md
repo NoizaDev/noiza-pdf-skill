@@ -13,11 +13,18 @@ user_invocable: true
 2. Converti il contenuto in HTML usando il template da `references/template.html`
 3. Genera il PDF (vedi procedura sotto)
 
-### Se stai creando da zero
-1. Leggi `references/template.html` per il CSS completo
-2. Leggi `references/components.md` per il catalogo dei componenti
-3. Scrivi il contenuto nel template
-4. Genera il PDF
+### Se stai creando da zero o da un brief
+Valuta l'input prima di procedere:
+
+**Input strutturato** (sezioni chiare, file `.md`, lista ordinata) → genera direttamente senza interrompere.
+
+**Input grezzo** (note di riunione, email, brief informale, bullet sparsi) → prima di generare:
+1. Estrai automaticamente: scope, deliverables, pricing/budget (se presenti), timeline, milestone
+2. Mostra un riepilogo compatto con i campi estratti — un campo per riga, valori mancanti segnalati esplicitamente
+3. Chiedi: *"Procedo con il PDF su questa base, o vuoi modificare qualcosa?"*
+4. Aspetta conferma, poi genera
+
+Non chiedere "vuoi che faccia l'analisi?" — falla e mostra il risultato. Un solo checkpoint, non un dialogo.
 
 ---
 
