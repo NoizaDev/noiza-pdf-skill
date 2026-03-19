@@ -39,79 +39,85 @@
 
 <p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA4MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSIwIiB5PSIyMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiMyNTYzZWIiPk5vaXphPC90ZXh0Pjwvc3ZnPg==" alt="Noiza" style="height: 24px;"></p>
 <hr>
-<p class="subtitle">noiza-pdf-skill &middot; <span class="badge">Guida utilizzo v1.1</span></p>
+<p class="subtitle">noiza-pdf-skill &middot; <span class="badge">Guida utilizzo v1.2</span></p>
 <h1>Generare documenti PDF<br>in stile Noiza</h1>
 <hr>
 <p><strong>Per:</strong> chi vuole creare documenti tecnici, proposte e note interne<br>
 <strong>Strumento:</strong> Claude Code (estensione VS Code o Antrigravity)</p>
 <hr>
 
-<h2>1. Prerequisiti</h2>
-<p>Prima di iniziare, assicurati di avere:</p>
-<ul>
-  <li><strong>Claude Code</strong> installato come estensione in VS Code o Antrigravity</li>
-  <li><strong>Playwright MCP</strong> abilitato nelle impostazioni di Claude Code</li>
-  <li><strong>Google Drive Desktop</strong> installato e sincronizzato con il tuo account Noiza &mdash; i documenti condivisi si trovano in Drive, non in locale</li>
-  <li><strong>La skill installata</strong> &mdash; chiedi a chi gestisce la skill il comando di installazione, oppure segui la guida contribuzione</li>
-</ul>
+<h2>Come funziona</h2>
+<p>Scrivi a Claude quello che vuoi. Claude crea il documento, lo converte in HTML con il template Noiza e genera il PDF. Non devi toccare nessun file a mano.</p>
+
+<hr>
+
+<h2>1. Setup iniziale</h2>
+<p>Fallo una volta sola.</p>
+
+<h3>Claude Code</h3>
+<p>Installa l'estensione <strong>Claude Code</strong> in VS Code o Antrigravity. Serve un account Anthropic con accesso Claude Code.</p>
+
+<h3>Playwright MCP</h3>
+<p>Apri le impostazioni di Claude Code &rarr; sezione <strong>MCP servers</strong> &rarr; abilita <strong>Playwright</strong>. Serve per la generazione PDF.</p>
+
+<h3>Google Drive Desktop</h3>
+<p>Installa <strong>Google Drive per Desktop</strong> e accedi con il tuo account Noiza. La cartella Drive viene montata in locale e Claude può leggerla e scriverci come una cartella normale sul tuo computer.</p>
+
+<h3>La skill</h3>
+<p>Apri Claude Code in qualsiasi progetto e chiedi:</p>
+<div class="key-point">
+  <p>"Installa la skill noiza-pdf-skill clonando https://github.com/NoizaDev/noiza-pdf-skill in ~/.claude/skills/"</p>
+</div>
+<p>Claude clona il repo. La skill è subito disponibile in tutte le sessioni.</p>
 
 <hr>
 
 <h2>2. Generare un documento</h2>
-
-<h3>Opzione A &mdash; da Markdown (consigliata per progetti condivisi)</h3>
-<ol>
-  <li>Crea o apri il file <code>.md</code> sorgente nella cartella del progetto su Google Drive</li>
-  <li>Scrivi il contenuto in Markdown standard</li>
-  <li>Per i componenti speciali (box, badge, riquadri costi), usa HTML inline &mdash; gli esempi sono in <code>references/components.md</code> nella cartella della skill</li>
-  <li>Apri il progetto in Claude Code e chiedi:</li>
-</ol>
+<p>Apri il progetto in Claude Code e descrivi quello che ti serve:</p>
+<div class="key-point">
+  <p>"Crea un documento tecnico Noiza: proposta per [cliente] su [argomento]. Includi: introduzione, architettura proposta, costi e prossimi passi."</p>
+</div>
+<p>oppure, se hai già un file <code>.md</code> con il contenuto:</p>
 <div class="key-point">
   <p>"Genera il PDF da <code>nome-file.md</code> in stile Noiza"</p>
 </div>
-<p>Claude converte il Markdown in HTML con il template Noiza e produce il PDF nella stessa cartella Drive.</p>
-
-<h3>Opzione B &mdash; da zero</h3>
-<p>Apri il progetto in Claude Code e descrivi il documento:</p>
-<div class="key-point">
-  <p>"Crea un documento tecnico Noiza: proposta per [cliente] su [argomento]. Includi: [sezioni principali]"</p>
-</div>
-<p>Claude genera HTML e PDF direttamente.</p>
+<p>Claude genera l'HTML con il template Noiza e produce il PDF.</p>
 
 <hr>
 
-<h2>3. Componenti disponibili</h2>
-<p>Tutti i componenti sono già inclusi nel CSS. Non serve aggiungere stili.</p>
-<table>
-  <tr><th>Componente</th><th>HTML nel .md</th><th>Effetto</th></tr>
-  <tr><td>Nota informativa</td><td><code>&lt;div class="key-point"&gt;&lt;p&gt;testo&lt;/p&gt;&lt;/div&gt;</code></td><td>Box blu chiaro</td></tr>
-  <tr><td>Avviso / rischio</td><td><code>&lt;div class="warning"&gt;&lt;p&gt;testo&lt;/p&gt;&lt;/div&gt;</code></td><td>Box arancione</td></tr>
-  <tr><td>Riquadro costi</td><td><code>&lt;div class="price-box"&gt;&lt;p&gt;testo&lt;/p&gt;&lt;/div&gt;</code></td><td>Box grigio bordo blu</td></tr>
-  <tr><td>Nuova sezione</td><td><code>&lt;span class="section-label"&gt;Label&lt;/span&gt;</code></td><td>Page break + label</td></tr>
-  <tr><td>Badge blu</td><td><code>&lt;span class="badge"&gt;Testo&lt;/span&gt;</code></td><td>Etichetta blu</td></tr>
-  <tr><td>Badge arancione</td><td><code>&lt;span class="badge-orange"&gt;Testo&lt;/span&gt;</code></td><td>Etichetta arancione</td></tr>
-  <tr><td>Badge verde</td><td><code>&lt;span class="badge-green"&gt;Testo&lt;/span&gt;</code></td><td>Etichetta verde</td></tr>
-</table>
-<p>Per vedere esempi completi, chiedi a Claude: <em>"Mostrami i componenti disponibili nella skill noiza-pdf"</em></p>
+<h2>3. Aggiornare un documento</h2>
+<p>Chiedi a Claude di modificare il contenuto:</p>
+<div class="key-point">
+  <p>"Aggiorna la proposta per [cliente]: cambia i costi nella sezione 3 e aggiungi una nota sui tempi di consegna"</p>
+</div>
+<p>Claude aggiorna il <code>.md</code> sorgente, rigenera l'HTML e il PDF. <strong>Non modificare mai l'HTML direttamente</strong> &mdash; il <code>.md</code> è la sorgente di verità.</p>
 
 <hr>
 
 <h2>4. Progetti condivisi su Google Drive</h2>
-<p>Se il progetto ha il campo <code>shared:</code> impostato nel suo <code>CLAUDE.md</code>, Claude legge e salva i file automaticamente su Drive. Il PDF finale appare nella cartella condivisa senza passi aggiuntivi.</p>
-<p>Per impostare un progetto come condiviso, dì a Claude:</p>
+<p>Se vuoi che i documenti vengano salvati su Drive (visibili a tutto il team), chiedi a Claude di configurare il progetto:</p>
 <div class="key-point">
   <p>"Questo progetto è condiviso, la cartella Drive è Clienti &gt; NomeCliente"</p>
 </div>
-<p>Claude aggiorna il <code>CLAUDE.md</code> del progetto.</p>
+<p>Claude aggiorna il file di configurazione del progetto. Da quel momento, ogni volta che generi o aggiorni un documento, Claude lo salva automaticamente nella cartella Drive corrispondente.</p>
+<p>Per verificare se un progetto è già configurato come condiviso:</p>
+<div class="key-point">
+  <p>"Questo progetto è locale o condiviso su Drive?"</p>
+</div>
 
 <hr>
 
-<h2>5. Aggiornare un documento esistente</h2>
-<p>Modifica il <code>.md</code> sorgente su Drive, poi chiedi a Claude:</p>
-<div class="key-point">
-  <p>"Rigenera il PDF da <code>nome-file.md</code>"</p>
-</div>
-<p>Claude sovrascrive <code>.html</code> e <code>.pdf</code>. Il <code>.md</code> è sempre la sorgente di verità &mdash; non modificare mai direttamente l'HTML generato.</p>
+<h2>5. Componenti disponibili</h2>
+<p>Puoi chiedere a Claude di usare componenti grafici specifici descrivendo cosa vuoi:</p>
+<table>
+  <tr><th>Cosa chiedi a Claude</th><th>Componente</th><th>Effetto</th></tr>
+  <tr><td>"Aggiungi un box informativo che dice: [testo]"</td><td><code>key-point</code></td><td>Box blu chiaro</td></tr>
+  <tr><td>"Metti un avviso arancione per segnalare che [rischio]"</td><td><code>warning</code></td><td>Box arancione</td></tr>
+  <tr><td>"Inserisci un riquadro costi con [dettagli]"</td><td><code>price-box</code></td><td>Box grigio bordo blu</td></tr>
+  <tr><td>"Inizia una nuova sezione intitolata [titolo]"</td><td><code>section-label</code></td><td>Page break + label</td></tr>
+  <tr><td>"Etichetta questa riga come [stato]"</td><td><code>badge</code> / <code>badge-orange</code> / <code>badge-green</code></td><td>Etichetta colorata</td></tr>
+</table>
+<p>Per vedere tutti i componenti con anteprima, chiedi a Claude: <em>&ldquo;Mostrami i componenti disponibili nella skill noiza-pdf&rdquo;</em></p>
 
 <hr>
 
@@ -121,7 +127,7 @@
 </div>
 
 <hr>
-<p><em>Preparato da Noiza &mdash; noiza-pdf-skill v1.1</em></p>
+<p><em>Preparato da Noiza &mdash; noiza-pdf-skill v1.2</em></p>
 
 </body>
 </html>
