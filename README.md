@@ -99,3 +99,9 @@ Per aggiungere un componente o correggere un bug:
 1. Modifica `references/template.html` (CSS) e `references/components.md` (esempio)
 2. Aggiorna la tabella componenti in `SKILL.md`
 3. PR su `main` con una riga di descrizione nel commit
+
+---
+
+## Maintainer
+
+This project is maintained by [Martino Stenta](https://github.com/martinostenta).
