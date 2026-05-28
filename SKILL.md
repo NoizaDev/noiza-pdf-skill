@@ -79,15 +79,19 @@ Non chiedere "vuoi che faccia l'analisi?" — falla e mostra il risultato. Un so
 | Componente | Classe / Tag | Quando usarlo |
 |---|---|---|
 | Tabella | `<table>` con `<th>` | Dati strutturati, comparazioni, stime |
+| Tabella voci | `<table>` con titolo+`<br>`+descr in cella | Listini, voci di preventivo (vedi components.md) |
+| Colonna numerica | `<th class="num">` / `<td class="num">` | Colonne prezzi/numeri — right-align + tabular-nums + nowrap |
 | Codice / flow | `<pre>` | Flussi ASCII, snippet, sequenze |
 | Codice inline | `<code>` | Nomi di funzioni, hook, parametri nel testo |
 | Nota informativa | `<div class="key-point">` | Raccomandazioni, punti chiave (blu) |
 | Avviso / rischio | `<div class="warning">` | Warning, punti critici, cose da verificare (arancione) |
-| Riquadro costi | `<div class="price-box">` | Preventivi, riepiloghi economici |
-| Etichetta sezione | `<span class="section-label">` | Label + page break prima di un h2 |
+| Riquadro costi | `<div class="price-box">` | Singoli importi evidenziati (hug content, angoli arrotondati) |
+| Page break | `<h2 class="page-break">` | Forzare nuova pagina prima di una sezione |
+| Etichetta sezione | `<span class="section-label">` | Etichetta uppercase + page break (solo se non ripete il titolo sotto) |
 | Badge blu | `<span class="badge">` | Data, versione, categoria |
 | Badge arancione | `<span class="badge-orange">` | Uso interno, non condividere |
 | Badge verde | `<span class="badge-green">` | Approvato, completato |
+| Footer | `<p class="doc-footer">` | Footer documento (anteporre `<hr>`, font ridotto centrato) |
 | Separatore | `<hr>` | Fine sezione |
 
 ---
@@ -112,12 +116,30 @@ Prima di finalizzare il testo del documento, verifica questi punti. Il testo gen
 
 ---
 
+## Linee guida editoriali
+
+**Nomenclatura voci numerica**: usare numeri (`01`, `02`, `03`...) e non lettere (`A`, `B`...). Per le sotto-voci usare la notazione decimale (`01.1`, `01.2`). Le lettere con `+` o `++` sembrano classi energetiche, da evitare.
+
+**Servizi continuativi come sezioni standalone**: hosting, pacchetti di assistenza, manutenzione, opzioni strategiche e voci simili vanno trattate come sezioni `<h2>` numerate che continuano la numerazione delle voci puntuali, NON come righe dentro a una tabella generica. Esempio: dopo voci 01-09 della tabella interventi, le sezioni standalone diventano `10. Hosting`, `11. Pacchetto assistenza`, ecc.
+
+**Prezzi nelle tabelle**: usare sempre `class="num"` sulla colonna prezzi per garantire right-align, cifre tabulari e nessun a-capo tra numero e simbolo `€`.
+
+**Tabelle voci**: preferire 2 colonne (titolo + descrizione nella stessa cella | prezzo) invece di 3 colonne (titolo | descrizione | prezzo) quando le due colonne testuali rischiano di andare a capo molte volte.
+
+**Footer**: testo senza italic e senza em dash. Virgola come separatore: *"Preparato da Noiza, Web Development Area"* + a capo + *"Mese Anno"*. Usare il componente `<p class="doc-footer">` con un `<hr>` davanti come stacco.
+
+**Colore brand**: blu ufficiale Noiza `#2563EB`. Già usato in logo, subtitle, badge, key-point. Non sostituire con altre sfumature di blu.
+
+---
+
 ## Checklist pre-generazione
 
 - [ ] CSS identico al template, nessuna modifica
 - [ ] Solo classi presenti in `references/template.html`
 - [ ] Righe nei `<pre>` max ~80 caratteri
 - [ ] Header: logo, hr, subtitle+badge, h1, hr, metadata, hr
-- [ ] Footer: hr, prepared by, mese anno
+- [ ] Footer: `<hr>` + `<p class="doc-footer">` (no italic, no em dash, virgola separator)
+- [ ] Voci numerate `01`, `02`... (mai lettere)
+- [ ] Colonne prezzi con `class="num"`
 - [ ] Testo rivisto con le regole anti-slop
 - [ ] Server HTTP avviato prima dell'export, terminato dopo

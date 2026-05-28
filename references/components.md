@@ -16,7 +16,7 @@ Tutti i componenti sono già inclusi nel CSS di `template.html`. Non aggiungere 
 
 ## Callout box
 
-### key-point — nota informativa (blu)
+### key-point — nota informativa (blu, angoli arrotondati)
 ```html
 <div class="key-point">
   <p><strong>Titolo opzionale:</strong> testo della nota.</p>
@@ -45,27 +45,17 @@ Con lista dentro:
 
 ## Price box — riquadro preventivo / riepilogo costi
 
+Box compatto (hug content, non tutta la larghezza) con angoli arrotondati. Da usare per singoli importi evidenziati.
+
 ```html
 <div class="price-box">
   <p><strong>Costo:</strong> 800 &euro; per lingua (IVA esclusa)</p>
-  <p>Note aggiuntive se necessario.</p>
 </div>
 ```
 
 ---
 
-## Section label — etichetta di sezione con page break
-
-Usare prima di un `<h2>` quando si vuole forzare una nuova pagina e aggiungere un'etichetta sopra il titolo (es. "Proposta S", "Appendice").
-
-```html
-<span class="section-label">Proposta S</span>
-<h2>Titolo della sezione</h2>
-```
-
----
-
-## Tabella
+## Tabella standard
 
 ```html
 <table>
@@ -73,6 +63,71 @@ Usare prima di un `<h2>` quando si vuole forzare una nuova pagina e aggiungere u
   <tr><td>Valore</td><td>Valore</td><td>Valore</td></tr>
 </table>
 ```
+
+Header in slate chiaro, niente zebratura, angoli arrotondati in alto.
+
+---
+
+## Tabella voci (titolo + descrizione in cella unica)
+
+Per liste di voci di intervento, listini, preventivi. Preferire questa forma a 3 colonne (titolo | descrizione | prezzo) quando titolo e descrizione sono entrambi testuali — evita righe troppo alte con descrizioni che vanno a capo molte volte.
+
+```html
+<table>
+  <tr><th>Voce</th><th class="num">Prezzo</th></tr>
+  <tr>
+    <td><strong>01. Titolo voce</strong><br>Descrizione paragrafata della voce, anche lunga su più righe.</td>
+    <td class="num">2.500 &euro;</td>
+  </tr>
+</table>
+```
+
+---
+
+## Colonna numerica — classe `.num`
+
+Applicare a `<th>` e `<td>` di qualsiasi colonna di prezzi o numeri. Effetti combinati:
+- allineamento a destra
+- cifre tabulari (larghezza fissa)
+- `white-space: nowrap` per evitare a-capo tra numero e simbolo `€`
+
+```html
+<tr>
+  <th>Voce</th>
+  <th class="num">Prezzo</th>
+</tr>
+<tr>
+  <td>Sviluppo modulo X</td>
+  <td class="num">1.200 &euro;</td>
+</tr>
+```
+
+Tutto il documento usa già `font-variant-numeric: tabular-nums` a livello `body`, quindi anche i numeri nei titoli e nei paragrafi sono a larghezza fissa.
+
+---
+
+## Page break — forzare nuova pagina
+
+Per spezzare il documento in pagine logiche (es. appendici, sintesi finali, sezioni standalone). Applicare a un `<h2>`.
+
+```html
+<h2 class="page-break">Titolo sezione su nuova pagina</h2>
+```
+
+Preferire questa classe alla `.section-label` quando non serve l'etichetta uppercase sopra il titolo.
+
+---
+
+## Section label — etichetta di sezione con page break
+
+Da usare quando si vuole un'etichetta uppercase sopra il titolo (es. "Appendice", "Proposta A"). Include `page-break-before: always`.
+
+```html
+<span class="section-label">Appendice A</span>
+<h2>Titolo della sezione</h2>
+```
+
+Se l'etichetta sarebbe semplicemente una ripetizione del titolo, usare `.page-break` sull'`<h2>` invece.
 
 ---
 
@@ -110,7 +165,7 @@ Il hook <code>gform_post_process_16</code> gestisce la transizione.
 ## Struttura header completa
 
 ```html
-<p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA4MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSIwIiB5PSIyMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiMyNTYzZWIiPk5vaXphPC90ZXh0Pjwvc3ZnPg==" alt="Noiza" style="height: 24px;"></p>
+<p class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="..." style="height:32px;width:auto">...</svg></p>
 <hr>
 <p class="subtitle">Cliente &middot; <span class="badge">Mese Anno</span></p>
 <h1>Titolo documento</h1>
@@ -121,9 +176,16 @@ Il hook <code>gform_post_process_16</code> gestisce la transizione.
 <hr>
 ```
 
-Footer:
+Il logo è il logo ufficiale Noiza (file in `references/logo-noiza_blu.svg`, già embeddato inline nel template).
+
+---
+
+## Footer
+
 ```html
 <hr>
-<p><em>Preparato da Noiza — Web Development Area</em><br>
-<em>Mese Anno</em></p>
+<p class="doc-footer">Preparato da Noiza, Web Development Area<br>
+Mese Anno</p>
 ```
+
+Niente italic, niente em dash. Virgola come separatore tra "Noiza" e "Web Development Area". Il footer ha font ridotto (9pt), grigio chiaro, allineato al centro. Anteporre un `<hr>` come stacco visivo.

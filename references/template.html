@@ -19,6 +19,7 @@
     font-size: 12pt;
     color: #1e293b;
     line-height: 1.4;
+    font-variant-numeric: tabular-nums;
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -38,7 +39,7 @@
     line-height: 1.0;
     padding-top: 18pt;
     padding-bottom: 0pt;
-    margin-bottom: 8pt;
+    margin-bottom: 4pt;
     page-break-after: avoid;
   }
   h3 {
@@ -77,20 +78,20 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 11pt;
-    color: #2563eb;
+    color: #2563EB;
     line-height: 1.0;
     padding-bottom: 0pt;
   }
 
   /* --- BADGE --- */
   .badge {
-    background-color: #2563eb;
+    background-color: #2563EB;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 10pt;
-    padding: 2px 8px;
-    border-radius: 3px;
+    padding: 2px 6px;
+    border-radius: 8px;
   }
   .badge-orange {
     background-color: #ea580c;
@@ -98,8 +99,8 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 10pt;
-    padding: 2px 8px;
-    border-radius: 3px;
+    padding: 2px 6px;
+    border-radius: 8px;
   }
   .badge-green {
     background-color: #16a34a;
@@ -107,8 +108,8 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 10pt;
-    padding: 2px 8px;
-    border-radius: 3px;
+    padding: 2px 6px;
+    border-radius: 8px;
   }
 
   hr {
@@ -133,7 +134,8 @@
     line-height: 1.4;
   }
   table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
     margin: 10pt 0 24pt 0;
     font-family: 'Montserrat', sans-serif;
@@ -141,25 +143,31 @@
     line-height: 1.3;
   }
   th {
-    background-color: #2563eb;
-    color: #ffffff;
+    background-color: #E2E8F0;
+    color: #1e293b;
     font-weight: 700;
     font-size: 9pt;
-    padding: 6px 8px;
+    padding: 12px 8px;
     text-align: left;
     border: none;
-    border-bottom: 1px solid #1d4ed8;
+    border-bottom: 1px solid #CBD5E1;
   }
+  tr:first-child th:first-child { border-top-left-radius: 12px; }
+  tr:first-child th:last-child { border-top-right-radius: 12px; }
   td {
     font-weight: 500;
     font-size: 9pt;
     color: #1e293b;
-    padding: 5px 8px;
+    padding: 12px 8px;
     border: none;
     border-bottom: 1px solid #e2e8f0;
     vertical-align: top;
   }
-  tr:nth-child(even) { background-color: #f8fafc; }
+  .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
   code {
     background-color: #f1f5f9;
     padding: 1px 5px;
@@ -171,7 +179,7 @@
   pre {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-left: 3px solid #2563eb;
+    border-left: 3px solid #2563EB;
     border-radius: 4px;
     padding: 14px;
     font-family: 'Courier New', Consolas, monospace;
@@ -185,7 +193,8 @@
   /* --- CALLOUT BOXES --- */
   .key-point {
     background-color: #eff6ff;
-    border-left: 3px solid #2563eb;
+    border-left: 3px solid #2563EB;
+    border-radius: 12px;
     padding: 10px 14px;
     margin: 10pt 0;
   }
@@ -201,20 +210,26 @@
 
   /* --- PRICE / SUMMARY BOX --- */
   .price-box {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-top: 3px solid #2563eb;
+    background-color: #E2E8F0;
+    border: none;
+    border-radius: 12px;
     padding: 12px 14px;
     margin: 10pt 0;
+    width: fit-content;
   }
   .price-box p { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
+
+  /* --- PAGE BREAK --- */
+  .page-break {
+    page-break-before: always;
+  }
 
   /* --- SECTION LABEL (page break + uppercase label) --- */
   .section-label {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 9pt;
-    color: #2563eb;
+    color: #2563EB;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding-top: 20pt;
