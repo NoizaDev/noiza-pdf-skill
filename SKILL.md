@@ -80,12 +80,14 @@ Non chiedere "vuoi che faccia l'analisi?" — falla e mostra il risultato. Un so
 |---|---|---|
 | Tabella | `<table>` con `<th>` | Dati strutturati, comparazioni, stime |
 | Tabella voci | `<table>` con titolo+`<br>`+descr in cella | Listini, voci di preventivo (vedi components.md) |
-| Colonna numerica | `<th class="num">` / `<td class="num">` | Colonne prezzi/numeri — right-align + tabular-nums + nowrap |
+| Tabella comparativa | `<table>` con righe-feature × N colonne-opzione | Confronto pacchetti/tier (es. 10/20/40/80h, trimestrale/mensile/settimanale), `&check;` nelle celle |
+| Colonna valore | `<th class="num">` / `<td class="num">` | Colonna a destra di tabelle spec/listino — numeri o anche valori testuali ("4 filters", "2 hours", "included"); right-align + tabular-nums + nowrap |
 | Codice / flow | `<pre>` | Flussi ASCII, snippet, sequenze |
 | Codice inline | `<code>` | Nomi di funzioni, hook, parametri nel testo |
 | Nota informativa | `<div class="key-point">` | Raccomandazioni, punti chiave (blu) |
 | Avviso / rischio | `<div class="warning">` | Warning, punti critici, cose da verificare (arancione) |
 | Riquadro costi | `<div class="price-box">` | Singoli importi evidenziati (hug content, angoli arrotondati) |
+| Griglia card | `<div class="team-grid">` con `.price-box` dentro | Riga di card grige (team, profili), allineate a sinistra, senza righe divisorie (vedi components.md) |
 | Page break | `<h2 class="page-break">` | Forzare nuova pagina prima di una sezione |
 | Etichetta sezione | `<span class="section-label">` | Etichetta uppercase + page break (solo se non ripete il titolo sotto) |
 | Badge blu | `<span class="badge">` | Data, versione, categoria |
@@ -113,6 +115,7 @@ Prima di finalizzare il testo del documento, verifica questi punti. Il testo gen
 - Una frase = un concetto
 - I numeri vanno nelle tabelle, non nel testo (es. "150 articoli, 75 esperienze, 65 operatori" → tabella)
 - I box `key-point` e `warning` devono contenere informazioni che non si trovano già nel testo normale
+- **Niente em dash (—) in tutto il documento**, non solo nel footer: sostituire con virgola, due punti o parentesi a seconda del contesto. Vale per titoli e testo inline. Esempi: "Cookie bar GDPR — recurring" → "Cookie bar GDPR (recurring)"; "300€ — incluso" → "300€, incluso"; "One-off costs — 30%" → "One-off costs: 30%"
 
 ---
 
@@ -123,6 +126,14 @@ Prima di finalizzare il testo del documento, verifica questi punti. Il testo gen
 **Servizi continuativi come sezioni standalone**: hosting, pacchetti di assistenza, manutenzione, opzioni strategiche e voci simili vanno trattate come sezioni `<h2>` numerate che continuano la numerazione delle voci puntuali, NON come righe dentro a una tabella generica. Esempio: dopo voci 01-09 della tabella interventi, le sezioni standalone diventano `10. Hosting`, `11. Pacchetto assistenza`, ecc.
 
 **Prezzi nelle tabelle**: usare sempre `class="num"` sulla colonna prezzi per garantire right-align, cifre tabulari e nessun a-capo tra numero e simbolo `€`.
+
+**Sotto-etichette come `h3`, non `<strong>` nel paragrafo**: le label che aprono un blocco ("Page templates", "Design and development", "GA4 configuration", ecc.) vanno in `<h3>` (14pt), non come prima riga in grassetto di un `<p>`. Lo `<strong>` inline resta solo per l'enfasi che continua nella frase (es. "**One-off costs:** 30% advance...").
+
+**Colonna valore nelle tabelle spec/listino**: spostare i numeri fuori dall'etichetta e dentro la colonna valore a destra. Es. "Page templates | 8" invece di "8 page templates | ✓". La colonna valore porta un numero quando esiste, altrimenti `&check;`; può contenere anche valori testuali ("4 filters", "2 hours", "included"). Sempre `class="num"` sulla colonna valore.
+
+**Liste "label + descrizione"**: niente trattino fra label e descrizione. Label in `<strong>`, poi `<br>`, poi la descrizione a capo. Es. `<li><strong>Homepage</strong><br>layout fully custom</li>`.
+
+**Gerarchia titoli**: h1 22pt / h2 18pt / h3 14pt / p 12pt / li 11pt. Già nel CSS del template, non ridefinire inline.
 
 **Tabelle voci**: preferire 2 colonne (titolo + descrizione nella stessa cella | prezzo) invece di 3 colonne (titolo | descrizione | prezzo) quando le due colonne testuali rischiano di andare a capo molte volte.
 
@@ -139,6 +150,9 @@ Prima di finalizzare il testo del documento, verifica questi punti. Il testo gen
 - [ ] Righe nei `<pre>` max ~80 caratteri
 - [ ] Header: logo, hr, subtitle+badge, h1, hr, metadata, hr
 - [ ] Footer: `<hr>` + `<p class="doc-footer">` (no italic, no em dash, virgola separator)
+- [ ] Nessun em dash (—) in tutto il documento (virgola / due punti / parentesi)
+- [ ] Sotto-etichette in `<h3>`, non `<strong>` come prima riga di un `<p>`
+- [ ] Numeri nella colonna valore (`class="num"`), non dentro l'etichetta
 - [ ] Voci numerate `01`, `02`... (mai lettere)
 - [ ] Colonne prezzi con `class="num"`
 - [ ] Testo rivisto con le regole anti-slop

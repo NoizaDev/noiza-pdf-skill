@@ -34,9 +34,9 @@
   h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 14pt;
+    font-size: 18pt;
     color: #1e293b;
-    line-height: 1.0;
+    line-height: 1.1;
     padding-top: 18pt;
     padding-bottom: 0pt;
     margin-bottom: 4pt;
@@ -45,7 +45,7 @@
   h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    font-size: 12pt;
+    font-size: 14pt;
     color: #1e293b;
     line-height: 1.4;
     padding-top: 8pt;
@@ -127,7 +127,7 @@
   li {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 12pt;
+    font-size: 11pt;
     color: #1e293b;
     padding-top: 4pt;
     padding-bottom: 4pt;
@@ -218,6 +218,24 @@
     width: fit-content;
   }
   .price-box p { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
+
+  /* --- TEAM / CARD GRID (single row of gray cards) --- */
+  .team-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin: 12pt 0;
+  }
+  .team-grid .price-box {
+    margin: 0;
+    padding: 10px 12px;
+    flex: 0 0 auto;
+  }
+  .team-grid .price-box p {
+    font-size: 7.5pt;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
 
   /* --- PAGE BREAK --- */
   .page-break {

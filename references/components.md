@@ -55,6 +55,23 @@ Box compatto (hug content, non tutta la larghezza) con angoli arrotondati. Da us
 
 ---
 
+## Team / card grid — riga di card grige
+
+Per il team di progetto o liste di profili: una riga di card grige (riusa `.price-box`), allineate a sinistra con lo spazio libero a destra, distanza fra le card pari al border-radius (12px), senza righe divisorie. Niente immagini.
+
+```html
+<div class="team-grid">
+  <div class="price-box"><p><strong>Nome Cognome</strong><br>Ruolo<br>email@noiza.com</p></div>
+  <div class="price-box"><p><strong>Nome Cognome</strong><br>Ruolo<br>email@noiza.com</p></div>
+  <div class="price-box"><p><strong>Nome Cognome</strong><br>Ruolo<br>email@noiza.com</p></div>
+  <div class="price-box"><p><strong>Nome Cognome</strong><br>Ruolo<br>email@noiza.com</p></div>
+</div>
+```
+
+Il testo nelle card del team è 7.5pt con `white-space: nowrap`, così quattro card stanno su una riga sola. Per molte card (oltre 4-5) valutare un font ancora più piccolo o lasciar andare a capo. Preferire `.team-grid` alla vecchia tabella 2 colonne, che mostrava bordi di cella deboli.
+
+---
+
 ## Tabella standard
 
 ```html
@@ -84,9 +101,56 @@ Per liste di voci di intervento, listini, preventivi. Preferire questa forma a 3
 
 ---
 
+## Tabella spec — convenzione "colonna valore"
+
+Per tabelle di specifiche o "cosa è incluso": i numeri vanno **fuori** dall'etichetta e dentro la colonna valore a destra. Es. "Page templates | 8" invece di "8 page templates | ✓". La colonna valore porta un numero se esiste, altrimenti `&check;`, e può contenere anche valori testuali ("4 filters", "2 hours", "included").
+
+```html
+<table>
+  <tr><th>Item</th><th class="num">Included</th></tr>
+  <tr><td>Page templates</td><td class="num">8</td></tr>
+  <tr><td>Custom Post Types</td><td class="num">2</td></tr>
+  <tr><td>Faceted archive</td><td class="num">4 filters</td></tr>
+  <tr><td>GA4 and GTM setup</td><td class="num">&check;</td></tr>
+  <tr><td><strong>Total</strong></td><td class="num"><strong>6.500 &euro;</strong></td></tr>
+</table>
+```
+
+---
+
+## Tabella comparativa — confronto pacchetti/tier
+
+Righe-feature × N colonne-opzione, con `&check;` nelle celle e la riga prezzo in fondo. Per confronti orizzontali tipo 10/20/40/80h o trimestrale/mensile/settimanale.
+
+```html
+<table>
+  <tr><th>Feature</th><th class="num">10 h</th><th class="num">20 h</th><th class="num">40 h</th><th class="num">80 h</th></tr>
+  <tr><td>Interventi evolutivi</td><td class="num">&check;</td><td class="num">&check;</td><td class="num">&check;</td><td class="num">&check;</td></tr>
+  <tr><td>Gestione a scalare</td><td class="num">&check;</td><td class="num">&check;</td><td class="num">&check;</td><td class="num">&check;</td></tr>
+  <tr><td><strong>Prezzo</strong></td><td class="num"><strong>1.000 &euro;</strong></td><td class="num"><strong>1.800 &euro;</strong></td><td class="num"><strong>3.200 &euro;</strong></td><td class="num"><strong>6.000 &euro;</strong></td></tr>
+</table>
+```
+
+La tabella è una tabella normale: niente wrapper grigio attorno (il `.price-box` è solo per singoli importi, non per avvolgere tabelle).
+
+---
+
+## Liste "label + descrizione"
+
+Niente trattino fra label e descrizione: label in `<strong>`, poi `<br>`, poi la descrizione a capo.
+
+```html
+<ol>
+  <li><strong>Homepage</strong><br>layout fully custom, disegnato singolarmente</li>
+  <li><strong>Contact page</strong></li>
+</ol>
+```
+
+---
+
 ## Colonna numerica — classe `.num`
 
-Applicare a `<th>` e `<td>` di qualsiasi colonna di prezzi o numeri. Effetti combinati:
+Applicare a `<th>` e `<td>` di qualsiasi colonna di prezzi o numeri. Si usa anche per la colonna valore con contenuti testuali brevi ("4 filters", "2 hours", "included"). Effetti combinati:
 - allineamento a destra
 - cifre tabulari (larghezza fissa)
 - `white-space: nowrap` per evitare a-capo tra numero e simbolo `€`
