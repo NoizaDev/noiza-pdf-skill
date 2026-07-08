@@ -25,9 +25,9 @@ Installa **Google Drive per Desktop** e accedi con il tuo account Noiza. La cart
 ### 4. La skill
 Apri Claude Code in qualsiasi progetto e chiedi:
 
-> "Installa la skill noiza-pdf-skill clonando https://github.com/NoizaDev/noiza-pdf-skill in ~/.claude/skills/"
+> "Installa la skill clonando https://github.com/NoizaDev/noiza-pdf-skill in ~/.claude/skills/noiza-docs"
 
-Claude clona il repo. La skill è subito disponibile in tutte le sessioni.
+Claude clona il repo nella cartella `noiza-docs`: il nome della cartella è quello con cui si invoca la skill (`/noiza-docs`), indipendente dal nome del repo. La skill è subito disponibile in tutte le sessioni.
 
 ---
 

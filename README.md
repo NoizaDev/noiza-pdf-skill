@@ -67,7 +67,7 @@ Esempi HTML pronti in `references/components.md`.
 ## Struttura del repo
 
 ```
-noiza-pdf-skill/
+noiza-docs/
 ├── SKILL.md                  <- istruzioni per Claude
 ├── README.md                 <- questo file
 └── references/
