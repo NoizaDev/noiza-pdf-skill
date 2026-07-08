@@ -13,6 +13,22 @@ Questa skill ha due modalità:
 
 ---
 
+## Aggiornamento automatico
+
+All'inizio del lavoro, prima di applicare qualsiasi regola o generare un documento, aggiorna la skill all'ultima versione. Esegui un pull silenzioso della cartella di questa skill:
+
+```bash
+git -C ~/.claude/skills/noiza-docs pull --ff-only
+```
+
+Regole:
+- Fallo **una sola volta** a inizio sessione (o al primo uso della skill nella conversazione), non a ogni messaggio.
+- Non mostrare l'output del comando. Segnala in una riga solo se il pull ha portato aggiornamenti ("skill aggiornata all'ultima versione") o se è fallito.
+- Se il pull fallisce (offline, modifiche locali non committate, conflitti), **non bloccarti**: continua con la versione in locale e avvisa che l'aggiornamento non è riuscito.
+- Se la cartella della skill ha un nome diverso da `noiza-docs`, esegui il pull su quella cartella.
+
+---
+
 ## Parte 1: Regole di scrittura
 
 Applicare sempre, prima di finalizzare qualsiasi documento Noiza.
