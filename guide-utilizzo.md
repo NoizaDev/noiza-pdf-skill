@@ -1,11 +1,17 @@
 ---
 tipo: guida-utilizzo
-versione: 1.2
+versione: 1.3
 ---
 
 ## Come funziona
 
-Scrivi a Claude quello che vuoi. Claude crea il documento, lo converte in HTML con il template Noiza e genera il PDF. Non devi toccare nessun file a mano.
+La skill lavora in due fasi.
+
+**Fase 1, sempre attiva: scrittura.** Quando chiedi un documento Noiza, Claude applica le regole di scrittura (niente em dash, soggetti reali, numeri in tabella, struttura editoriale) e produce o rivede un file `.md`. Nessun HTML, nessun PDF, finché non lo chiedi.
+
+**Fase 2, solo su richiesta: PDF.** Quando chiedi esplicitamente il PDF, Claude converte il `.md` in HTML con il template Noiza, incorpora il font e genera il file. Non devi toccare nessun file a mano.
+
+Il `.md` resta sempre la sorgente di verità: l'HTML e il PDF si rigenerano da lì.
 
 ---
 
@@ -16,8 +22,8 @@ Fallo una volta sola.
 ### 1. Claude Code
 Installa l'estensione **Claude Code** in VS Code o Antrigravity. Serve un account Anthropic con accesso Claude Code.
 
-### 2. Playwright MCP
-Apri le impostazioni di Claude Code → sezione **MCP servers** → abilita **Playwright**. Serve per la generazione PDF.
+### 2. Playwright MCP (consigliato)
+Apri le impostazioni di Claude Code → sezione **MCP servers** → abilita **Playwright**. È la via preferita per la generazione PDF. Se non è disponibile, Claude usa un fallback via Chrome headless che richiede solo Google Chrome installato: la fase 2 funziona comunque.
 
 ### 3. Google Drive Desktop
 Installa **Google Drive per Desktop** e accedi con il tuo account Noiza. La cartella Drive viene montata in locale e Claude può leggerla e scriverci come una cartella normale sul tuo computer.
@@ -31,17 +37,21 @@ Claude clona il repo nella cartella `noiza-docs`: il nome della cartella è quel
 
 ---
 
-## Generare un documento
+## Scrivere un documento
 
 Apri il progetto in Claude Code e descrivi quello che ti serve:
 
 > "Crea un documento tecnico Noiza: proposta per [cliente] su [argomento]. Includi: introduzione, architettura proposta, costi e prossimi passi."
 
-oppure, se hai già un file `.md` con il contenuto:
+Claude produce il file `.md` applicando le regole Noiza. A questo punto hai il contenuto pronto, senza PDF.
+
+## Generare il PDF
+
+Quando ti serve il file da inviare, chiedilo esplicitamente:
 
 > "Genera il PDF da `nome-file.md` in stile Noiza"
 
-Claude genera l'HTML con il template Noiza e produce il PDF.
+Claude converte il `.md` in HTML con il template Noiza e produce il PDF.
 
 ---
 
@@ -80,7 +90,7 @@ Puoi chiedere a Claude di usare componenti grafici specifici descrivendo cosa vu
 
 Per vedere tutti i componenti disponibili con anteprima:
 
-> "Mostrami i componenti disponibili nella skill noiza-pdf"
+> "Mostrami i componenti disponibili nella skill noiza-docs"
 
 ---
 

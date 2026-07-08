@@ -33,21 +33,25 @@
   .price-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-top: 3px solid #2563eb; padding: 12px 14px; margin: 10pt 0; }
   .price-box p { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
   .section-label { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 9pt; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; padding-top: 20pt; padding-bottom: 2pt; display: block; page-break-before: always; }
+  .doc-footer { font-size: 9pt; color: #64748b; text-align: center; font-weight: 500; padding-top: 6pt; }
 </style>
 </head>
 <body>
 
-<p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA4MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSIwIiB5PSIyMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiMyNTYzZWIiPk5vaXphPC90ZXh0Pjwvc3ZnPg==" alt="Noiza" style="height: 24px;"></p>
+<p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNzI5LjY3NCIgaGVpZ2h0PSIxMDgwIiB2aWV3Qm94PSIwIDAgMzcyOS42NzQgMTA4MCI+DQogIDxnIGlkPSJsb2dvLW5vaXphX2JsdSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc5LjkyNiAtMjYuNTIzKSI+DQogICAgPHBhdGggaWQ9IlRyYWNjaWF0b18xMSIgZGF0YS1uYW1lPSJUcmFjY2lhdG8gMTEiIGQ9Ik03ODEuMiwxMDM3Ljg0MiwzMjAuOSw0MjEuNzEydjYxNi4xM0g3OS45MjZWMjcuOEgzMTAuOGw0NjAuMjY0LDYxNi4xM1YyNy44aDI0MS42OTJWMTAzNy44NDJaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDQ5LjkyOSkiIGZpbGw9IiMyNTYzZWIiLz4NCiAgICA8cGF0aCBpZD0iVHJhY2NpYXRvXzEyIiBkYXRhLW5hbWU9IlRyYWNjaWF0byAxMiIgZD0iTTg3NC41Miw0MDcuODU0YzAsMjE0LjI4NS0xNjMuMDc4LDM3My0zODQuNTc1LDM3My0yMjEuNDU3LDAtMzgzLjc3NC0xNTguNzExLTM4My43NzQtMzczLDAtMjE0LjI0NSwxNjIuMzE3LTM3MywzODMuNzc0LTM3M0M3MTEuNDQyLDM0Ljg1OSw4NzQuNTIsMTkzLjYwOSw4NzQuNTIsNDA3Ljg1NFptLTUzNy40NzYsMGMwLDk1LjI0Miw2NC45MTEsMTYyLjMxNywxNTIuOSwxNjIuMzE3LDg4Ljc1MSwwLDE1My43LTY3LjA3NCwxNTMuNy0xNjIuMzE3LDAtOTUuMi02NC45NTEtMTYyLjMxNi0xNTMuNy0xNjIuMzE2QzQwMS45NTQsMjQ1LjUzOCwzMzcuMDQ0LDMxMi42NTIsMzM3LjA0NCw0MDcuODU0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyNS4zMDcgMzI1LjY3MykiIGZpbGw9IiMyNTYzZWIiLz4NCiAgICA8cGF0aCBpZD0iVHJhY2NpYXRvXzEzIiBkYXRhLW5hbWU9IlRyYWNjaWF0byAxMyIgZD0iTTM5Ny4yNDgsMTYyLjE1NGMwLDc1LjAwOC01OS4xNDEsMTM0LjE4OS0xMzQuOTEsMTM0LjE4OS03Ni40ODksMC0xMzQuOTEtNTkuMTgxLTEzNC45MS0xMzQuMTg5LDAtNzYuNDUsNTguNDIxLTEzNS42MzEsMTM0LjkxLTEzNS42MzFDMzM4LjEwNywyNi41MjMsMzk3LjI0OCw4NS43LDM5Ny4yNDgsMTYyLjE1NFptLTI0Ni43NCw5MjUuNjE3VjM4MC4wNDZIMzc2LjMzM3Y3MDcuNzI2WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg1NS44MiAwKSIgZmlsbD0iIzI1NjNlYiIvPg0KICAgIDxwYXRoIGlkPSJUcmFjY2lhdG9fMTQiIGRhdGEtbmFtZT0iVHJhY2NpYXRvIDE0IiBkPSJNNDU1LjUyOCw1NDMuMjEySDc3NS4xNTN2MTk5Ljg2SDEzNi42MjV2LTE2MS42TDQ1Ni4yNSwyMzUuMTY3SDE0OC45MjZWMzUuMzQ2SDc2Ny45VjIwMS45OVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIyMTUuMTMxIDM0NC42OTkpIiBmaWxsPSIjMjU2M2ViIi8+DQogICAgPHBhdGggaWQ9IlRyYWNjaWF0b18xNSIgZGF0YS1uYW1lPSJUcmFjY2lhdG8gMTUiIGQ9Ik02ODYuNjkxLDc2Mi4xdi03Ni40OWMtNDMuMjcyLDU1LjU3NS0xMDcuNSw5NS4yNDItMjAzLjQyNiw5NS4yNDItMTg4LjMyMSwwLTMyOS0xNjMuNzU5LTMyOS0zNzMuNzE3LDAtMjA3Ljc5NCwxMzkuOTU3LTM3Mi4yNzQsMzI5LjcyMS0zNzIuMjc0LDk1LjIsMCwxNjAuMTUzLDQwLjQyOSwyMDIuNzA2LDk1Ljk2NFY1NC4zNzNIOTA1LjNWNzYyLjFaTTM4Ni41NCw0MDcuODU0YzAsOTIuMzU4LDYwLjYyNCwxNjIuMzE3LDE1MC44MTgsMTYyLjMxNyw4OC43MSwwLDE1MS41LTY4LjUxNywxNTEuNS0xNjIuMzE3LDAtOTMuNzYtNjIuNzg3LTE2Mi4zMTYtMTUxLjUtMTYyLjMxNkM0NDcuMTY0LDI0NS41MzgsMzg2LjU0LDMxNS41LDM4Ni41NCw0MDcuODU0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjkwNC4yOTUgMzI1LjY3MykiIGZpbGw9IiMyNTYzZWIiLz4NCiAgPC9nPg0KPC9zdmc+DQo=" alt="Noiza" style="height: 24px;"></p>
 <hr>
-<p class="subtitle">noiza-pdf-skill &middot; <span class="badge">Guida utilizzo v1.2</span></p>
-<h1>Generare documenti PDF<br>in stile Noiza</h1>
+<p class="subtitle">noiza-docs &middot; <span class="badge">Guida utilizzo v1.3</span></p>
+<h1>Scrivere documenti<br>in stile Noiza</h1>
 <hr>
 <p><strong>Per:</strong> chi vuole creare documenti tecnici, proposte e note interne<br>
-<strong>Strumento:</strong> Claude Code (estensione VS Code o Antrigravity)</p>
+<strong>Strumento:</strong> Claude Code (estensione VS Code o Antigravity)</p>
 <hr>
 
 <h2>Come funziona</h2>
-<p>Scrivi a Claude quello che vuoi. Claude crea il documento, lo converte in HTML con il template Noiza e genera il PDF. Non devi toccare nessun file a mano.</p>
+<p>La skill lavora in due fasi.</p>
+<p><strong>Fase 1, sempre attiva: scrittura.</strong> Quando chiedi un documento Noiza, Claude applica le regole di scrittura (niente em dash, soggetti reali, numeri in tabella, struttura editoriale) e produce o rivede un file <code>.md</code>. Nessun HTML, nessun PDF finché non lo chiedi.</p>
+<p><strong>Fase 2, solo su richiesta: PDF.</strong> Quando chiedi esplicitamente il PDF, Claude converte il <code>.md</code> in HTML con il template Noiza, incorpora il font e genera il file.</p>
+<p>Il <code>.md</code> resta sempre la sorgente di verità: HTML e PDF si rigenerano da lì.</p>
 
 <hr>
 
@@ -55,10 +59,10 @@
 <p>Fallo una volta sola.</p>
 
 <h3>Claude Code</h3>
-<p>Installa l'estensione <strong>Claude Code</strong> in VS Code o Antrigravity. Serve un account Anthropic con accesso Claude Code.</p>
+<p>Installa l'estensione <strong>Claude Code</strong> in VS Code o Antigravity. Serve un account Anthropic con accesso Claude Code.</p>
 
-<h3>Playwright MCP</h3>
-<p>Apri le impostazioni di Claude Code &rarr; sezione <strong>MCP servers</strong> &rarr; abilita <strong>Playwright</strong>. Serve per la generazione PDF.</p>
+<h3>Playwright MCP (consigliato)</h3>
+<p>Apri le impostazioni di Claude Code &rarr; sezione <strong>MCP servers</strong> &rarr; abilita <strong>Playwright</strong>. È la via preferita per generare il PDF. Se non è disponibile, Claude usa un fallback via Chrome headless che richiede solo Google Chrome installato: la fase 2 funziona comunque.</p>
 
 <h3>Google Drive Desktop</h3>
 <p>Installa <strong>Google Drive per Desktop</strong> e accedi con il tuo account Noiza. La cartella Drive viene montata in locale e Claude può leggerla e scriverci come una cartella normale sul tuo computer.</p>
@@ -66,35 +70,40 @@
 <h3>La skill</h3>
 <p>Apri Claude Code in qualsiasi progetto e chiedi:</p>
 <div class="key-point">
-  <p>"Installa la skill noiza-pdf-skill clonando https://github.com/NoizaDev/noiza-pdf-skill in ~/.claude/skills/"</p>
+  <p>"Installa la skill clonando https://github.com/NoizaDev/noiza-pdf-skill in ~/.claude/skills/noiza-docs"</p>
 </div>
-<p>Claude clona il repo. La skill è subito disponibile in tutte le sessioni.</p>
+<p>Claude clona il repo nella cartella <code>noiza-docs</code>. È il nome della cartella a decidere come si invoca la skill (<code>/noiza-docs</code>), indipendente dal nome del repo. La skill è subito disponibile in tutte le sessioni.</p>
 
 <hr>
 
-<h2>2. Generare un documento</h2>
+<h2>2. Scrivere un documento</h2>
 <p>Apri il progetto in Claude Code e descrivi quello che ti serve:</p>
 <div class="key-point">
   <p>"Crea un documento tecnico Noiza: proposta per [cliente] su [argomento]. Includi: introduzione, architettura proposta, costi e prossimi passi."</p>
 </div>
-<p>oppure, se hai già un file <code>.md</code> con il contenuto:</p>
-<div class="key-point">
-  <p>"Genera il PDF da <code>nome-file.md</code> in stile Noiza"</p>
-</div>
-<p>Claude genera l'HTML con il template Noiza e produce il PDF.</p>
+<p>Claude produce il file <code>.md</code> applicando le regole Noiza. A questo punto hai il contenuto pronto, senza PDF.</p>
 
 <hr>
 
-<h2>3. Aggiornare un documento</h2>
+<h2>3. Generare il PDF</h2>
+<p>Quando ti serve il file da inviare, chiedilo esplicitamente:</p>
+<div class="key-point">
+  <p>"Genera il PDF da <code>nome-file.md</code> in stile Noiza"</p>
+</div>
+<p>Claude converte il <code>.md</code> in HTML con il template Noiza e produce il PDF.</p>
+
+<hr>
+
+<h2>4. Aggiornare un documento</h2>
 <p>Chiedi a Claude di modificare il contenuto:</p>
 <div class="key-point">
   <p>"Aggiorna la proposta per [cliente]: cambia i costi nella sezione 3 e aggiungi una nota sui tempi di consegna"</p>
 </div>
-<p>Claude aggiorna il <code>.md</code> sorgente, rigenera l'HTML e il PDF. <strong>Non modificare mai l'HTML direttamente</strong> &mdash; il <code>.md</code> è la sorgente di verità.</p>
+<p>Claude aggiorna il <code>.md</code> sorgente. Se poi ti serve il file da inviare, chiedi di rigenerare il PDF. <strong>Non modificare mai l'HTML direttamente:</strong> il <code>.md</code> è la sorgente di verità.</p>
 
 <hr>
 
-<h2>4. Progetti condivisi su Google Drive</h2>
+<h2>5. Progetti condivisi su Google Drive</h2>
 <p>Se vuoi che i documenti vengano salvati su Drive (visibili a tutto il team), chiedi a Claude di configurare il progetto:</p>
 <div class="key-point">
   <p>"Questo progetto è condiviso, la cartella Drive è Clienti &gt; NomeCliente"</p>
@@ -107,7 +116,7 @@
 
 <hr>
 
-<h2>5. Componenti disponibili</h2>
+<h2>6. Componenti disponibili</h2>
 <p>Puoi chiedere a Claude di usare componenti grafici specifici descrivendo cosa vuoi:</p>
 <table>
   <tr><th>Cosa chiedi a Claude</th><th>Componente</th><th>Effetto</th></tr>
@@ -117,7 +126,7 @@
   <tr><td>"Inizia una nuova sezione intitolata [titolo]"</td><td><code>section-label</code></td><td>Page break + label</td></tr>
   <tr><td>"Etichetta questa riga come [stato]"</td><td><code>badge</code> / <code>badge-orange</code> / <code>badge-green</code></td><td>Etichetta colorata</td></tr>
 </table>
-<p>Per vedere tutti i componenti con anteprima, chiedi a Claude: <em>&ldquo;Mostrami i componenti disponibili nella skill noiza-pdf&rdquo;</em></p>
+<p>Per vedere tutti i componenti con anteprima, chiedi a Claude: "Mostrami i componenti disponibili nella skill noiza-docs".</p>
 
 <hr>
 
@@ -127,7 +136,7 @@
 </div>
 
 <hr>
-<p><em>Preparato da Noiza &mdash; noiza-pdf-skill v1.2</em></p>
+<p class="doc-footer">Preparato da Noiza, Web Development Area<br>Luglio 2026</p>
 
 </body>
 </html>

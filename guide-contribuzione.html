@@ -33,39 +33,42 @@
   .price-box { background-color: #f8fafc; border: 1px solid #e2e8f0; border-top: 3px solid #2563eb; padding: 12px 14px; margin: 10pt 0; }
   .price-box p { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
   .section-label { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 9pt; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; padding-top: 20pt; padding-bottom: 2pt; display: block; page-break-before: always; }
+  .doc-footer { font-size: 9pt; color: #64748b; text-align: center; font-weight: 500; padding-top: 6pt; }
 </style>
 </head>
 <body>
 
-<p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCA4MCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSIwIiB5PSIyMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiMyNTYzZWIiPk5vaXphPC90ZXh0Pjwvc3ZnPg==" alt="Noiza" style="height: 24px;"></p>
+<p class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNzI5LjY3NCIgaGVpZ2h0PSIxMDgwIiB2aWV3Qm94PSIwIDAgMzcyOS42NzQgMTA4MCI+DQogIDxnIGlkPSJsb2dvLW5vaXphX2JsdSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc5LjkyNiAtMjYuNTIzKSI+DQogICAgPHBhdGggaWQ9IlRyYWNjaWF0b18xMSIgZGF0YS1uYW1lPSJUcmFjY2lhdG8gMTEiIGQ9Ik03ODEuMiwxMDM3Ljg0MiwzMjAuOSw0MjEuNzEydjYxNi4xM0g3OS45MjZWMjcuOEgzMTAuOGw0NjAuMjY0LDYxNi4xM1YyNy44aDI0MS42OTJWMTAzNy44NDJaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDQ5LjkyOSkiIGZpbGw9IiMyNTYzZWIiLz4NCiAgICA8cGF0aCBpZD0iVHJhY2NpYXRvXzEyIiBkYXRhLW5hbWU9IlRyYWNjaWF0byAxMiIgZD0iTTg3NC41Miw0MDcuODU0YzAsMjE0LjI4NS0xNjMuMDc4LDM3My0zODQuNTc1LDM3My0yMjEuNDU3LDAtMzgzLjc3NC0xNTguNzExLTM4My43NzQtMzczLDAtMjE0LjI0NSwxNjIuMzE3LTM3MywzODMuNzc0LTM3M0M3MTEuNDQyLDM0Ljg1OSw4NzQuNTIsMTkzLjYwOSw4NzQuNTIsNDA3Ljg1NFptLTUzNy40NzYsMGMwLDk1LjI0Miw2NC45MTEsMTYyLjMxNywxNTIuOSwxNjIuMzE3LDg4Ljc1MSwwLDE1My43LTY3LjA3NCwxNTMuNy0xNjIuMzE3LDAtOTUuMi02NC45NTEtMTYyLjMxNi0xNTMuNy0xNjIuMzE2QzQwMS45NTQsMjQ1LjUzOCwzMzcuMDQ0LDMxMi42NTIsMzM3LjA0NCw0MDcuODU0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyNS4zMDcgMzI1LjY3MykiIGZpbGw9IiMyNTYzZWIiLz4NCiAgICA8cGF0aCBpZD0iVHJhY2NpYXRvXzEzIiBkYXRhLW5hbWU9IlRyYWNjaWF0byAxMyIgZD0iTTM5Ny4yNDgsMTYyLjE1NGMwLDc1LjAwOC01OS4xNDEsMTM0LjE4OS0xMzQuOTEsMTM0LjE4OS03Ni40ODksMC0xMzQuOTEtNTkuMTgxLTEzNC45MS0xMzQuMTg5LDAtNzYuNDUsNTguNDIxLTEzNS42MzEsMTM0LjkxLTEzNS42MzFDMzM4LjEwNywyNi41MjMsMzk3LjI0OCw4NS43LDM5Ny4yNDgsMTYyLjE1NFptLTI0Ni43NCw5MjUuNjE3VjM4MC4wNDZIMzc2LjMzM3Y3MDcuNzI2WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg1NS44MiAwKSIgZmlsbD0iIzI1NjNlYiIvPg0KICAgIDxwYXRoIGlkPSJUcmFjY2lhdG9fMTQiIGRhdGEtbmFtZT0iVHJhY2NpYXRvIDE0IiBkPSJNNDU1LjUyOCw1NDMuMjEySDc3NS4xNTN2MTk5Ljg2SDEzNi42MjV2LTE2MS42TDQ1Ni4yNSwyMzUuMTY3SDE0OC45MjZWMzUuMzQ2SDc2Ny45VjIwMS45OVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIyMTUuMTMxIDM0NC42OTkpIiBmaWxsPSIjMjU2M2ViIi8+DQogICAgPHBhdGggaWQ9IlRyYWNjaWF0b18xNSIgZGF0YS1uYW1lPSJUcmFjY2lhdG8gMTUiIGQ9Ik02ODYuNjkxLDc2Mi4xdi03Ni40OWMtNDMuMjcyLDU1LjU3NS0xMDcuNSw5NS4yNDItMjAzLjQyNiw5NS4yNDItMTg4LjMyMSwwLTMyOS0xNjMuNzU5LTMyOS0zNzMuNzE3LDAtMjA3Ljc5NCwxMzkuOTU3LTM3Mi4yNzQsMzI5LjcyMS0zNzIuMjc0LDk1LjIsMCwxNjAuMTUzLDQwLjQyOSwyMDIuNzA2LDk1Ljk2NFY1NC4zNzNIOTA1LjNWNzYyLjFaTTM4Ni41NCw0MDcuODU0YzAsOTIuMzU4LDYwLjYyNCwxNjIuMzE3LDE1MC44MTgsMTYyLjMxNyw4OC43MSwwLDE1MS41LTY4LjUxNywxNTEuNS0xNjIuMzE3LDAtOTMuNzYtNjIuNzg3LTE2Mi4zMTYtMTUxLjUtMTYyLjMxNkM0NDcuMTY0LDI0NS41MzgsMzg2LjU0LDMxNS41LDM4Ni41NCw0MDcuODU0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjkwNC4yOTUgMzI1LjY3MykiIGZpbGw9IiMyNTYzZWIiLz4NCiAgPC9nPg0KPC9zdmc+DQo=" alt="Noiza" style="height: 24px;"></p>
 <hr>
-<p class="subtitle">noiza-pdf-skill &middot; <span class="badge">Guida contribuzione</span></p>
-<h1>Migliorare e mantenere<br>noiza-pdf-skill</h1>
+<p class="subtitle">noiza-docs &middot; <span class="badge">Guida contribuzione</span></p>
+<h1>Migliorare e mantenere<br>la skill noiza-docs</h1>
 <hr>
 <p><strong>Per:</strong> chi vuole aggiungere componenti, correggere bug o modificare il workflow<br>
 <strong>Prerequisito:</strong> accesso in write al repo <code>NoizaDev/noiza-pdf-skill</code></p>
 <hr>
 
 <h2>1. Struttura del repo</h2>
+<p>Il repo è <code>NoizaDev/noiza-pdf-skill</code>, ma va clonato nella cartella <code>noiza-docs</code>: è il nome della cartella a decidere come si invoca la skill (<code>/noiza-docs</code>).</p>
 <pre>
-noiza-pdf-skill/
-├── SKILL.md              ← istruzioni per Claude (il "cervello" della skill)
-├── README.md             ← guida installazione e uso rapido
-├── guide-utilizzo.md     ← guida per chi genera documenti
-├── guide-contribuzione.md← questa guida
+noiza-docs/
+├── SKILL.md                ← istruzioni per Claude (il "cervello" della skill)
+├── README.md               ← guida installazione e uso rapido
+├── guide-utilizzo.md       ← guida per chi genera documenti
+├── guide-contribuzione.md  ← questa guida
 └── references/
-    ├── template.html     ← CSS Noiza completo (unica fonte di stile)
-    └── components.md     ← catalogo componenti con snippet HTML
+    ├── template.html       ← CSS Noiza completo (unica fonte di stile)
+    ├── components.md       ← catalogo componenti con snippet HTML
+    └── logo-noiza_blu.svg  ← logo ufficiale per l'header
 </pre>
 
 <hr>
 
 <h2>2. Cosa NON modificare senza test</h2>
 <div class="warning">
-  <p><strong>SKILL.md</strong> — controlla il comportamento di Claude. Una modifica sbagliata cambia come la skill interpreta le richieste per tutti.</p>
+  <p><strong>SKILL.md</strong> controlla il comportamento di Claude. Una modifica sbagliata cambia come la skill interpreta le richieste per tutti.</p>
 </div>
 <div class="warning">
-  <p><strong>CSS in template.html</strong> — qualsiasi modifica si riflette su tutti i documenti rigenerati. Testa sempre su un documento reale prima di fare push.</p>
+  <p><strong>CSS in template.html:</strong> qualsiasi modifica si riflette su tutti i documenti rigenerati. Testa sempre su un documento reale prima di fare push.</p>
 </div>
 
 <hr>
@@ -73,7 +76,7 @@ noiza-pdf-skill/
 <h2>3. Aggiungere un nuovo componente</h2>
 <p>Un componente è una classe CSS riutilizzabile. Segui questi 3 passi nell'ordine:</p>
 
-<h3>Passo 1 — CSS in <code>references/template.html</code></h3>
+<h3>Passo 1: CSS in <code>references/template.html</code></h3>
 <p>Aggiungi il nuovo stile nella sezione commenti corrispondente:</p>
 <pre>
 .nome-componente {
@@ -89,15 +92,23 @@ noiza-pdf-skill/
 }
 </pre>
 
-<h3>Passo 2 — Esempio in <code>references/components.md</code></h3>
+<h3>Passo 2: esempio in <code>references/components.md</code></h3>
 <p>Aggiungi una sezione con: titolo, descrizione breve, snippet HTML pronto all'uso. Segui il formato degli altri componenti nel file.</p>
 
-<h3>Passo 3 — Tabella in <code>SKILL.md</code></h3>
+<h3>Passo 3: tabella in <code>SKILL.md</code></h3>
 <p>Aggiungi una riga alla tabella "Componenti disponibili" con: nome, classe CSS, quando usarlo.</p>
 
 <hr>
 
-<h2>4. Colori di riferimento</h2>
+<h2>4. Modificare il workflow di generazione PDF</h2>
+<p>Il workflow è definito in <code>SKILL.md</code> (Parte 3) e prevede due vie di export: <strong>Playwright MCP</strong> (preferita) e un <strong>fallback via Chrome DevTools Protocol</strong> quando Playwright non è disponibile. Entrambe partono da un server HTTP locale e condividono la regola sul font Montserrat incorporato in base64.</p>
+<div class="warning">
+  <p><strong>Attenzione:</strong> il workflow è lo stesso per tutti i colleghi. Una modifica sbagliata qui rompe la generazione PDF per chiunque usi la skill. Testa sempre su un documento reale prima di fare push.</p>
+</div>
+
+<hr>
+
+<h2>5. Colori di riferimento</h2>
 <table>
   <tr><th>Nome</th><th>Hex</th><th>Uso</th></tr>
   <tr><td>Blu primario</td><td><code>#2563eb</code></td><td>Bordi, header tabelle, badge, accent</td></tr>
@@ -112,10 +123,10 @@ noiza-pdf-skill/
 
 <hr>
 
-<h2>5. Fare una PR</h2>
+<h2>6. Fare una PR</h2>
 <ol>
   <li>Crea un branch con nome descrittivo: <code>add-success-box</code>, <code>fix-table-overflow</code></li>
-  <li>Fai le modifiche nei 3 file coinvolti (CSS, components.md, SKILL.md)</li>
+  <li>Fai le modifiche nei file coinvolti (CSS, components.md, SKILL.md)</li>
   <li>Testa generando almeno un PDF completo con il nuovo componente</li>
   <li>Apri la PR su <code>main</code> con una riga di descrizione nel titolo</li>
 </ol>
@@ -126,11 +137,11 @@ fix: correggi overflow tabelle con testo lungo
 </pre>
 
 <div class="key-point">
-  <p><strong>Regola base:</strong> i file <code>.md</code> sono la sorgente, i file <code>.html</code> e <code>.pdf</code> sono output rigenerabili. Nel repo versiona solo i <code>.md</code> e i file di configurazione — non i PDF generati.</p>
+  <p><strong>Sorgente e output:</strong> i file <code>.md</code> sono la sorgente, i file <code>.html</code> e <code>.pdf</code> sono output rigenerabili. Le guide (utilizzo e contribuzione) fanno eccezione: versioniamo anche i loro <code>.html</code> e <code>.pdf</code> perché sono la reference che i colleghi leggono. Per i documenti dei progetti cliente, invece, nel repo va solo il <code>.md</code>.</p>
 </div>
 
 <hr>
-<p><em>Preparato da Noiza &mdash; noiza-pdf-skill v1.0</em></p>
+<p class="doc-footer">Preparato da Noiza, Web Development Area<br>Luglio 2026</p>
 
 </body>
 </html>

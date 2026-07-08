@@ -5,15 +5,18 @@ versione: 1.0
 
 ## Struttura del repo
 
+Il repo è `NoizaDev/noiza-pdf-skill`, ma va clonato nella cartella `noiza-docs`: è il nome della cartella a determinare come si invoca la skill (`/noiza-docs`).
+
 ```
-noiza-pdf-skill/
+noiza-docs/
 ├── SKILL.md                  ← istruzioni per Claude (il "cervello" della skill)
 ├── README.md                 ← guida utente
-├── guide-utilizzo.md         ← questa guida, per chi usa la skill
+├── guide-utilizzo.md         ← per chi usa la skill
 ├── guide-contribuzione.md    ← questa guida, per chi la migliora
 └── references/
     ├── template.html         ← CSS Noiza completo (unica fonte di stile)
-    └── components.md         ← catalogo componenti con snippet HTML
+    ├── components.md         ← catalogo componenti con snippet HTML
+    └── logo-noiza_blu.svg    ← logo ufficiale per l'header
 ```
 
 ---
@@ -63,7 +66,7 @@ Crea un documento di prova con il nuovo componente e verifica che il PDF sia cor
 
 ## Modificare il workflow di generazione PDF
 
-Il workflow (server HTTP + Playwright MCP) è definito in `SKILL.md`. Se cambi qualcosa:
+Il workflow è definito in `SKILL.md` (Parte 3) e prevede due vie di export: **Playwright MCP** (preferita) e un **fallback via Chrome DevTools Protocol** quando Playwright non è disponibile. Entrambe partono da un server HTTP locale e condividono la stessa regola sul font Montserrat incorporato in base64. Se cambi qualcosa:
 
 <div class="warning">
   <p><strong>Attenzione:</strong> il workflow è lo stesso per tutti i colleghi. Una modifica sbagliata qui rompe la generazione PDF per chiunque usi la skill. Testa sempre su un documento reale prima di fare push.</p>
