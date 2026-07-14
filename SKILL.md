@@ -68,6 +68,14 @@ Testo senza italic e senza em dash. Virgola come separatore: "Preparato da Noiza
 
 Blu ufficiale Noiza: `#2563EB`. Non sostituire con altre sfumature.
 
+### Team di progetto (documenti per clienti)
+
+Se il documento è destinato a un cliente esterno (proposta, preventivo, contratto, tender), chiedere: "Ti serve inserire un team di progetto? Indicami i nomi."
+
+Se l'utente indica solo il nome proprio (es. "Federica e Giulia"), completare automaticamente cognome e ruolo consultando https://noiza.com/team/. Non chiedere conferma dei dati recuperati, salvo nomi ambigui o assenti dalla pagina (in quel caso segnalarlo e chiedere il dato mancante).
+
+Layout: `.team-grid` (riga singola, card compatte) o `.team-proposal-grid` (2 colonne, con anno di ingresso e bio), vedi Componenti disponibili.
+
 ---
 
 ## Parte 3: Export PDF
