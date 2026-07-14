@@ -224,10 +224,10 @@
   }
   .price-box p { font-size: 11pt; padding-top: 3pt; padding-bottom: 3pt; }
 
-  /* --- TEAM / CARD GRID (single row of gray cards) --- */
+  /* --- TEAM / CARD GRID (default team component: name + role + email) --- */
   .team-grid {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 12px;
     margin: 12pt 0;
   }
@@ -298,6 +298,8 @@
     font-weight: 700;
     font-size: 11pt;
     margin-bottom: 1pt;
+  }
+  .team-proposal-card:has(.card-year) .card-name {
     padding-right: 82px;
   }
   .card-role {

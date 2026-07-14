@@ -70,11 +70,13 @@ Blu ufficiale Noiza: `#2563EB`. Non sostituire con altre sfumature.
 
 ### Team di progetto (documenti per clienti)
 
-Se il documento è destinato a un cliente esterno (proposta, preventivo, contratto, tender), chiedere: "Ti serve inserire un team di progetto? Indicami i nomi."
+Se il documento è destinato a un cliente esterno (proposta, preventivo, contratto, tender), chiedere: "Ti serve inserire un team di progetto? Indicami i nomi (e dimmi se vuoi anche bio e anno di ingresso per ciascuno, altrimenti resto su nome, ruolo e mail)."
 
-Se l'utente indica solo il nome proprio (es. "Federica e Giulia"), completare automaticamente cognome e ruolo consultando https://noiza.com/team/. Non chiedere conferma dei dati recuperati, salvo nomi ambigui o assenti dalla pagina (in quel caso segnalarlo e chiedere il dato mancante).
+Se l'utente indica solo il nome proprio (es. "Federica e Giulia"), completare automaticamente cognome e ruolo consultando https://noiza.com/team/, ed email consultando `references/team-emails.md` (lista storica per le eccezioni, altrimenti `nome.cognome@noiza.com`). Non chiedere conferma dei dati recuperati, salvo nomi ambigui o assenti dalla pagina (in quel caso segnalarlo e chiedere il dato mancante).
 
-Layout: `.team-grid` (riga singola, card compatte) o `.team-proposal-grid` (2 colonne, con anno di ingresso e bio), vedi Componenti disponibili.
+Bio e anno di ingresso non si ricavano dalla pagina team né si inventano: vanno sempre forniti dall'utente. Se richiesti ma mancanti per una o più persone, chiederli esplicitamente invece di generarli.
+
+Layout di default: `.team-grid` (nome, ruolo, email; card ancorate a sinistra, vanno a capo su più righe se non entrano su una sola). Usare `.team-proposal-grid` (2 colonne, con bio e opzionale anno di ingresso) solo se l'utente ha chiesto esplicitamente bio/anno.
 
 ---
 
@@ -240,8 +242,8 @@ kill $(lsof -ti:8877) 2>/dev/null
 | Nota informativa | `<div class="key-point">` | Raccomandazioni, punti chiave (blu) |
 | Avviso / rischio | `<div class="warning">` | Warning, punti critici (arancione) |
 | Riquadro costi | `<div class="price-box">` | Singoli importi evidenziati |
-| Griglia card (riga) | `<div class="team-grid">` con `.price-box` | Card team su riga singola orizzontale |
-| Griglia card (2 col) | `<div class="team-proposal-grid">` con `.team-proposal-card` | Card team a 2 colonne con anno e bio |
+| Griglia card (default team) | `<div class="team-grid">` con `.price-box` | Team di progetto: nome, ruolo, email. Ancorata a sx, va a capo su più righe se necessario |
+| Griglia card (2 col, con bio) | `<div class="team-proposal-grid">` con `.team-proposal-card` | Solo su richiesta esplicita di bio/descrizione estesa, anno opzionale |
 | Anno card | `<span class="card-year">` | Badge anno in alto a destra nella card |
 | Tavola dei contenuti | `<div class="toc-box">` con `.toc-row` e `.toc-num` | Indice con anchor link, sfondo grigio |
 | Page break | `<h2 class="page-break">` | Nuova pagina prima di una sezione |

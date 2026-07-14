@@ -55,9 +55,9 @@ Box compatto (hug content, non tutta la larghezza) con angoli arrotondati. Da us
 
 ---
 
-## Team / card grid — riga di card grige
+## Team / card grid — modulo di default (nome, ruolo, email)
 
-Per il team di progetto o liste di profili: una riga di card grige (riusa `.price-box`), allineate a sinistra con lo spazio libero a destra, distanza fra le card pari al border-radius (12px), senza righe divisorie. Niente immagini.
+Modulo di default per il team di progetto, salvo richiesta esplicita di bio/anno (in quel caso vedi variante 2 colonne sotto). Card grige (riusa `.price-box`), ancorate a sinistra, distanza fra le card pari al border-radius (12px), senza righe divisorie. Niente immagini.
 
 ```html
 <div class="team-grid">
@@ -68,7 +68,43 @@ Per il team di progetto o liste di profili: una riga di card grige (riusa `.pric
 </div>
 ```
 
-Il testo nelle card del team è 7.5pt con `white-space: nowrap`, così quattro card stanno su una riga sola. Per molte card (oltre 4-5) valutare un font ancora più piccolo o lasciar andare a capo. Preferire `.team-grid` alla vecchia tabella 2 colonne, che mostrava bordi di cella deboli.
+Il testo nelle card è 7.5pt con `white-space: nowrap`. Le card vanno a capo su una nuova riga quando non entrano tutte, ancorate a sinistra (`flex-wrap: wrap`, nessun centraggio).
+
+---
+
+## Team / card grid a 2 colonne — con bio
+
+Per team di progetto con descrizione più estesa (proposte, presentazioni). Due varianti, stessa struttura:
+
+**Senza anno** (versione più usata):
+```html
+<div class="team-proposal-grid">
+  <div class="team-proposal-card">
+    <p class="card-name">Nome Cognome</p>
+    <p class="card-role">Ruolo</p>
+    <p class="card-bio">Breve bio o descrizione del contributo al progetto.</p>
+  </div>
+  <div class="team-proposal-card">
+    <p class="card-name">Nome Cognome</p>
+    <p class="card-role">Ruolo</p>
+    <p class="card-bio">Breve bio o descrizione del contributo al progetto.</p>
+  </div>
+</div>
+```
+
+**Con badge anno** (es. anno di ingresso in Noiza):
+```html
+<div class="team-proposal-grid">
+  <div class="team-proposal-card">
+    <span class="card-year">2013</span>
+    <p class="card-name">Nome Cognome</p>
+    <p class="card-role">Ruolo</p>
+    <p class="card-bio">Breve bio o descrizione del contributo al progetto.</p>
+  </div>
+</div>
+```
+
+Il badge `.card-year` è opzionale: se assente, `.card-name` usa tutta la larghezza della card (nessun padding riservato).
 
 ---
 
